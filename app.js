@@ -85,7 +85,7 @@ const Guest = mongoose.model("Guest",guestSchema);
 const Employee = mongoose.model("Employee",employeeSchema);
 
 app.get("/",function(req,res){
-  res.render("login");
+  res.redirect("/login");
 })
 
 app.get("/auth/google",
