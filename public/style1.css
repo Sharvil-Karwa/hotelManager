@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+h2{
+    margin: auto 1rem;
+}
+  .cards{
+    display: flex;
+    flex-direction: row;
+  }
+  .card{
+    margin: 1rem;
+  }
+  nav{
+    padding: 1rem;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  form button{
+    margin-top: 1rem;
+  }
+  .btn-primary{
+    margin: 0.2rem auto;
+  } 
+  #createBtn{
+    margin: 0.5rem auto;
+    width: 40%;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+    border: none;
+  } 
+.roomNumber{
+    margin-right: 0.2rem;
+    text-decoration: underline blue;
+    font-size: 1.2rem;
+}
+
+.content{
+    margin: 1.5rem;
+    justify-content: center;
+} 
+
+nav a{
+  font-size: large;
+}
+
+.employeeCards{
+  justify-content: center;
+}

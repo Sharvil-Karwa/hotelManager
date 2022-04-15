@@ -1,0 +1,164 @@
+<%- include('partials/header.ejs') %>
+
+<!-- Available Rooms -->
+
+<h2>Available Rooms</h2> 
+
+<div class="cards">
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-Single-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Single</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="no" && room.type=="single"){ %>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-primary"><%=room.number%></a>
+                
+                <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+    
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-Double-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Double</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="no" && room.type=="double"){ %>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-primary"><%=room.number%></a>
+                
+                <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+    
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-Queen-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Queen</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="no" && room.type=="queen"){ %>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-primary"><%=room.number%></a>
+                
+                <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+    
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-King-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">King</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="no" && room.type=="king"){ %>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-primary"><%=room.number%></a>
+                
+                <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Occupied Rooms -->
+
+<h2>Occupied Rooms</h2> 
+
+<div class="cards">
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-Single-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Single</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="yes" && room.type=="single"){ %> 
+                    <span class="roomNumber"><%=room.number%></span>
+                    <a href="/OccupiedRooms/<%=room.number%>" class="btn btn-primary">Details</a>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-outline-primary">Edit</a>
+                    <br>
+                <% } %>
+                <% }) %> 
+            
+            </div>
+        </div>
+    </div>
+    
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-Double-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Double</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="yes" && room.type=="double"){ %>
+                    <span class="roomNumber"><%=room.number%></span>
+                    <a href="/OccupiedRooms/<%=room.number%>" class="btn btn-primary">Details</a>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-outline-primary">Edit</a>
+                    <br>
+                <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+    
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-Queen-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Queen</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="yes" && room.type=="queen"){ %>
+                    <span class="roomNumber"><%=room.number%></span>
+                    <a href="/OccupiedRooms/<%=room.number%>" class="btn btn-primary">Details</a>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-outline-primary">Edit</a>
+                    <br>
+                <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+    
+    <div class="room">
+        <div class="card" style="width: 20.5rem;">
+            <img class="card-img-top" src="https://setupmyhotel.com/images/Room-Type-King-Room.jpg?ezimgfmt=rs:300x250/rscb337/ng:webp/ngcb337" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">King</h5>
+              <%foundrooms.forEach(function(room){ %>
+                <% if(room.occupied=="yes" && room.type=="king"){ %>
+                    <span class="roomNumber"><%=room.number%></span>
+                    <a href="/OccupiedRooms/<%=room.number%>" class="btn btn-primary">Details</a>
+                    <a href="/rooms/<%=room.number%>" class="btn btn-outline-primary">Edit</a>
+                    <br>
+                <% } %>
+                <% }) %> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add new room -->
+<h2>Add new room</h2>
+
+<div class="card" style="width: 40rem;">
+    <div class="card-body">
+        <form action="/rooms" method="post">
+            <label for="">Room Number</label>
+            <input type="number" name="roomNumber">
+            <label for="">Room Type</label>
+            <select name="roomType" id="">
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="queen">Queen</option>
+                <option value="king">King</option>
+            </select>
+            <button type="submit" class="btn-primary" id="createBtn">Create</button>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

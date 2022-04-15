@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs') %> 
+<div class="card" style="width: 40%;">
+    <div class="card-body">
+    <h3>Room Info</h3>
+            <p><strong class="text-primary">Room Number: </strong> <%=post.number%></p>
+            <p><strong class="text-primary">Room Type: </strong><%=post.type%></p>
+            <p><strong class="text-primary">Check-In Date: </strong><%=post.checkIn.toString().substring(0,15)%></p>
+            <p><strong class="text-primary">Check-Out Date: </strong> <%=post.checkOut.toString().substring(0,15)%></p>
+    <h3>Guest Info</h3> 
+            <p><strong class="text-primary">Email: </strong><%=guest.email%></p>
+            <p><strong class="text-primary">Name: </strong><%=guest.name%></p>
+            <p><strong class="text-primary">Contact: </strong><%=guest.contact%></p>
+            <p><strong class="text-primary">Age: </strong><%=guest.age%></p>
+            <p><strong class="text-primary">Address: </strong><%=guest.address%></p> 
+        </div>
+    </div>
+<%- include('partials/footer.ejs') %> 

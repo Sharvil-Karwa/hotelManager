@@ -1,0 +1,19 @@
+<%- include('partials/header.ejs') %> 
+
+
+    <div class="employeeCards row">
+    <%foundemployees.forEach(function(employee){ %>
+                <div class="card col-lg-4">
+                    <!-- <img class="card-img-top" src="" alt="Card image cap"> -->
+                    <div class="card-body">
+                      <h5 class="card-title"><%=employee.name%></h5>
+                      <p><strong class="text-primary"><%=employee.role%></strong></p>
+                      <p><%=employee.email%></p>
+                      <a href="/employees/<%=employee.email%>" class="btn btn-primary">Details</a>
+                    </div>
+                </div> 
+        <% }) %>
+
+    </div>
+
+

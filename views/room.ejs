@@ -1,0 +1,44 @@
+<%- include('partials/header.ejs') %> 
+
+    <form id="roomForm" action="/rooms/<%=post.number%>" method="post" style="display: flex; flex-direction: column; margin: 3rem;">
+        <label for="">Room Number</label>
+        <input type="number" name="roomNumber" value="<%=post.number%>" disabled>
+        <label for="">Room Type</label>
+        <input type="text" name="roomType" value="<%=post.type%>" disabled>
+        <label for="">Occupied</label>
+        <select name="occupied" id="occupied">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select> 
+        <div id="email">
+            <label for="" style="display: block;">Guest Email</label>
+            <input type="email" name="email" id="emailInput" style="width: 100%" value="">
+            <label for="" style="display: block;">Check In Date</label>
+            <input type="date" name="checkIn" id="c1" style="width: 100%" value="">
+            <label for="" style="display: block;">Check Out Date</label>
+            <input type="date" name="checkOut" id="c2" style="width: 100%" value="">
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:0.5rem; width: 10%;">Update</button>
+    </form> 
+    </div> 
+    <script>        
+        document.getElementById("email").style.display = "none";
+        document.getElementById("occupied").onchange = function(){
+            if( document.getElementById("occupied").value == 'no') {
+                console.log("no");
+                document.getElementById("email").style.display = "none";
+                document.getElementById("emailInput").required = false;
+                document.getElementById("c1").required = false;
+                document.getElementById("c2").required = false;
+            }
+            else{
+                console.log("yes");
+                document.getElementById("email").style.display = "inline-block";
+                document.getElementById("emailInput").required = true;
+                document.getElementById("c1").required = true;
+                document.getElementById("c2").required = true;
+            }
+        }
+        </script>
+
+<%- include('partials/footer.ejs') %> 
